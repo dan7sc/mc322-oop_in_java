@@ -1,0 +1,5 @@
+# Building everything
+jupyter lab build
+
+#Install C Kernel
+install_c_kernel --user
