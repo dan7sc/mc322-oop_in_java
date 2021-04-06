@@ -67,6 +67,6 @@ Foi escrito uma função (método) que codifica a cadeia de RNA produzida a part
 
 Uma empresa precisa realizar uma estatística do salário de seus funcionários.
 
-Para fins de teste, os salários devem ser gerados aleatoriamente com valores variando entre R\\$ 2.500 e R\\$ 15.000.
+Para fins de teste, os salários devem ser gerados aleatoriamente com valores variando entre R$ 2.500 e R$ 15.000.
 
 Foi escrito um programa que gera uma lista contendo os salários de 50 funcionários da empresa e exibido no console quantos funcionários ganham salário acima da média.
