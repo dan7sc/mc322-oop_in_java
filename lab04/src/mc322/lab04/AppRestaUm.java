@@ -1,22 +1,28 @@
 package mc322.lab04;
 
 public class AppRestaUm {
-    public static String[] executaJogo(String caminhoArquivoCSV) {
-        System.out.println(caminhoArquivoCSV);
-        String[] str = new String[7];
+    static public void executaJogo(String caminhoArquivoCSV) {
+        CSVReader csv = new CSVReader();
+        Tabuleiro tabuleiro = new Tabuleiro();
 
-        Tabuleiro t = new Tabuleiro();
-        t.imprimeTabuleiroInicial();
+        csv.setDataSource(caminhoArquivoCSV);
 
-        return str;
+        tabuleiro.adicionaPecas();
+
+        System.out.println("Tabuleiro inicial");
+        tabuleiro.imprime();
+
+        String[] commands = csv.requestCommands();
+        for(int i = 0; i < commands.length; i++) {
+            tabuleiro.movimentaPeca(commands[i]);
+            tabuleiro.imprimeJogada(commands[i]);
+            tabuleiro.imprime();
+        }
     }
 
     static public void main(String[] args) {
+        String csvFile = "src/db/arq001.csv";
         AppRestaUm app = new AppRestaUm();
-        String[] tab = app.executaJogo("src/db/arq001.csv");
-        for(int i = 0; i < tab.length; i++) {
-            System.out.println(tab[i]);
-        }
-
+        app.executaJogo(csvFile);
     }
 }
